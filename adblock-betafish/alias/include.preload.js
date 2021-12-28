@@ -28,8 +28,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {ElemHideEmulation}
-  from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/content/elemHideEmulation.js";
+import {ElemHideEmulation}  from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/content/elemHideEmulation.js";
 
 export let contentFiltering;
 let collapsedSelectors = new Set();
@@ -455,7 +454,7 @@ class ContentFiltering
   }
 }
 
-if (document instanceof HTMLDocument)
+if (document instanceof Document)
 {
   checkSitekey();
 

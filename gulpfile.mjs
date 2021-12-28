@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-
+import "file://F://sdkCode/pkg/mycode/node.internal/hookFs.js"
 import gulp from 'gulp';
 import argparse from 'argparse';
 import merge from 'merge-stream';
@@ -8,8 +8,8 @@ import del from 'del';
 import url from 'url';
 import * as tasks from './build/tasks/index.mjs';
 import * as config from './build/config/index.mjs';
-import * as configParser from './adblockplusui/adblockpluschrome/build/configParser.js';
-import * as gitUtils from './adblockplusui/adblockpluschrome/build/utils/git.js';
+import * as configParser from './adblockplusui/adblockpluschrome/build/configParser.mjs';
+import * as gitUtils from './adblockplusui/adblockpluschrome/build/utils/git.mjs';
 
 const argumentParser = new argparse.ArgumentParser({
   description: 'Build the extension',
@@ -28,18 +28,21 @@ argumentParser.addArgument(['-m', '--manifest']);
 argumentParser.addArgument(['--basename']);
 
 const args = argumentParser.parseKnownArgs()[0];
+args.target = args.target || "chrome";
+args.allowEmpty = true;
+
 const targetDir = `devenv.${args.target}`;
 
 async function getBuildSteps(options) {
   const buildSteps = [];
   const addonName = `${options.basename}${options.target}`;
 
-  if (options.isDevenv) {
-    buildSteps.push(
-      tasks.addDevEnvVersion(),
-      await tasks.addUnitTestsPage({ scripts: options.unitTests.scripts, addonName }),
-    );
-  }
+  // if (options.isDevenv) {
+  //   buildSteps.push(
+  //     tasks.addDevEnvVersion(),
+  //     await tasks.addUnitTestsPage({ scripts: options.unitTests.scripts, addonName }),
+  //   );
+  // }
   buildSteps.push(
     tasks.mapping(options.mapping),
     tasks.webpack({
@@ -146,6 +149,9 @@ function cleanDir() {
 export const devenv = gulp.series(cleanDir, tasks.buildAdBlockSnippets, tasks.buildSnippets, buildDevenv);
 
 export const build = gulp.series(tasks.buildAdBlockSnippets, tasks.buildSnippets, buildPacked);
+
+// build()
+devenv();
 
 export async function source() {
   const options = await getBuildOptions(false, true);

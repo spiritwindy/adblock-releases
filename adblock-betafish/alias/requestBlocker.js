@@ -24,18 +24,22 @@
 /** @module requestBlocker */
 
 import {Filter, URLFilter,
-        BlockingFilter} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/filterClasses.js";
-import {contentTypes} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/contentTypes.js";
-import {Subscription} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/subscriptionClasses.js";
-import {defaultMatcher} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/matcher.js";
-import {filterNotifier} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/filterNotifier.js";
-import {filterState} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/filterState.js";
-import {parseURL} from "../../adblockplusui/adblockpluschrome/adblockpluscore/lib/url.js";
-import {checkAllowlisted, getKey} from "../../adblockplusui/adblockpluschrome/lib/allowlisting.js";
-import {extractHostFromFrame} from "../../adblockplusui/adblockpluschrome/lib/url.js";
-import {port} from "../../adblockplusui/adblockpluschrome/lib/messaging.js";
-import {logRequest as hitLoggerLogRequest} from "../../adblockplusui/adblockpluschrome/lib/hitLogger.js";
-import {recordBlockedRequest} from "../../adblockplusui/adblockpluschrome/lib/stats.js";
+        BlockingFilter} from "../../adblockpluschrome/adblockpluscore/lib/filterClasses.js";
+        // import moduleName from '../../';
+import {contentTypes} from "../../adblockpluschrome/adblockpluscore/lib/contentTypes.js";
+import {Subscription} from "../../adblockpluschrome/adblockpluscore/lib/subscriptionClasses.js";
+import {defaultMatcher} from "../../adblockpluschrome/adblockpluscore/lib/matcher.js";
+import {filterNotifier} from "../../adblockpluschrome/adblockpluscore/lib/filterNotifier.js";
+import {filterState} from "../../adblockpluschrome/adblockpluscore/lib/filterState.js";
+import {parseURL} from "../../adblockpluschrome/adblockpluscore/lib/url.js";
+import {checkAllowlisted, getKey} from "../../adblockpluschrome/lib/allowlisting.js";
+// import moduleName from '../../';
+
+
+import {extractHostFromFrame} from "../../adblockpluschrome/lib/url.js";
+import {port} from "../../adblockpluschrome/lib/messaging.js";
+import {logRequest as hitLoggerLogRequest} from "../../adblockpluschrome/lib/hitLogger.js";
+import {recordBlockedRequest} from "../../adblockpluschrome/lib/stats.js";
 
 const extensionProtocol = new URL(browser.runtime.getURL("")).protocol;
 

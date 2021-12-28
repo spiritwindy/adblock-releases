@@ -24,19 +24,14 @@
     "submodules:update": "git submodule update --init --recursive",
     "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive",
     "preinstall": "npm run install-abp-chrome && npm run install-abp-ui",
-    "postinstall": "npm run post-install-abp-ui && npm run install-snippets",
+    "postinstall": "npm run install-snippets",
     "install-abp-ui": "npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --prefix ./adblockplusui/",
-    "post-install-abp-ui": "npm run dist --prefix ./adblockplusui/",
     "install-abp-chrome": "npm install --no-audit --no-fund --no-optional --prefix ./adblockplusui/adblockpluschrome/",
     "install-snippets": "npm install --loglevel=error --no-audit --no-fund --no-optional --prefix ./vendor/abp-snippets || echo 'Skipping abp-snippets installation'"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "21.0.0",
     "@rollup/plugin-node-resolve": "13.0.5",
-    "eslint": "^7.9.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-no-unsanitized": "^3.0.2",
     "gulp-gzip": "^1.4.2",
     "gulp-tar": "^3.1.0",
     "handlebars": "^4.7.6",
@@ -55,11 +50,15 @@
     "node": ">12.0 || <12.0"
   },
   "dependencies": {
+    "archiver-utils": "^2.1.0",
     "argparse": "^1.0.10",
     "del": "^5.1.0",
+    "fast-glob": "^3.2.7",
     "gulp": "^4.0.2",
     "gulp-vinyl-zip": "^2.2.1",
     "merge-stream": "^2.0.0",
+    "p-map": "^5.3.0",
+    "plugin-error": "^1.0.1",
     "stylelint": "^12.0.0"
   },
   "husky": {

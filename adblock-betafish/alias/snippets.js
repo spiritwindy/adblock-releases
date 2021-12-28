@@ -2117,7 +2117,7 @@ exports["abort-on-iframe-property-write"] =
  * Patches a list of properties on the iframes' window object to abort execution
  * when the property is read/written.
  *
- * @param {...string} properties The list with the properties.
+ * @param {string[]} properties The list with the properties.
  * @param {boolean?} [abortRead=false] Should abort on read option.
  * @param {boolean?} [abortWrite=false] Should abort on write option.
  * @private

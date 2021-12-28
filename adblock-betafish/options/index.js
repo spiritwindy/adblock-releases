@@ -578,13 +578,6 @@ $(() => {
   shouldShowEmailCTA();
 });
 
-storageSet(License.pageReloadedOnSettingChangeKey, false);
-window.onbeforeunload = function leavingOptionsPage() {
-  if (autoReloadingPage) {
-    storageSet(License.pageReloadedOnSettingChangeKey, true);
-  }
-  storageSet(License.userSawSyncCTAKey, true);
-};
 
 document.addEventListener('readystatechange', () => {
   if ((document.readyState === 'complete') && (typeof setLangAndDirAttributes === 'function')) {

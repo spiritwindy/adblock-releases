@@ -1,6 +1,6 @@
 import path from 'path';
 
-const tmplLoaderPath = path.resolve('adblockplusui', 'adblockpluschrome', 'build', 'utils', 'wp-template-loader.cjs');
+const tmplLoaderPath = path.resolve('adblockplusui', 'adblockpluschrome', 'build', 'utils', 'wp-template-loader');
 
 export default {
   optimization: {
@@ -18,14 +18,14 @@ export default {
       punycode$: 'punycode.js',
       url$: 'url.js',
       prefs: path.resolve('', 'adblockplusui/adblockpluschrome/lib/prefs.js'),
-      './options': '../../adblock-betafish/alias/options.js',
-      './icon': '../../adblock-betafish/alias/icon.js',
-      subscriptionInit: '../../adblock-betafish/alias/subscriptionInit.js',
-      './filterListener': '../../../../adblock-betafish/alias/filterListener.js',
-      './requestBlocker.js': '../../../adblock-betafish/alias/requestBlocker.js',
-      uninstall: '../../adblock-betafish/alias/uninstall.js',
-      './recommendations': '../../../../adblock-betafish/alias/recommendations.js',
-      notificationHelper: '../../adblock-betafish/alias/notificationHelper.js',
+      './options': path.resolve('', 'adblock-betafish/alias/options.js'),
+      './icon': path.resolve('', 'adblock-betafish/alias/icon.js'),
+      subscriptionInit: path.resolve('', 'adblock-betafish/alias/subscriptionInit.js'),
+      './filterListener': path.resolve('', 'adblock-betafish/alias/filterListener.js'),
+      './requestBlocker.js': path.resolve('', 'adblock-betafish/alias/requestBlocker.js'),
+      uninstall: path.resolve('', 'adblock-betafish/alias/uninstall.js'),
+      './recommendations': path.resolve('', 'adblock-betafish/alias/recommendations.js'),
+      notificationHelper: path.resolve('', 'adblock-betafish/alias/notificationHelper.js'),
     },
     modules: [
       'adblockplusui/adblockpluschrome/lib',

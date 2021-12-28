@@ -6,11 +6,10 @@ export { default as mapping } from './mapping.mjs';
 export {
   translations,
   chromeTranslations,
-} from '../../adblockplusui/adblockpluschrome/build/tasks/translations.js';
+} from '../../adblockplusui/adblockpluschrome/build/tasks/translations.mjs';
 export {
   addDevEnvVersion,
-  addUnitTestsPage,
-} from '../../adblockplusui/adblockpluschrome/build/tasks/devenv.js';
+} from '../../adblockplusui/adblockpluschrome/build/tasks/devenv.mjs';
 export {
   default as sourceDistribution,
 } from './sourceDistribution.mjs';
