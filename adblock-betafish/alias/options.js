@@ -141,12 +141,17 @@ export async function showOptions() {
 // Firefox from the manifest at all, instead setting it here only for
 // non-mobile.
 // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1414613
-Promise.all([browser.browserAction.getPopup({}), browser.runtime.getPlatformInfo()]).then(
-  ([popup, platformInfo]) => {
-    if (!popup && platformInfo.os != "android")
-      browser.browserAction.setPopup({ popup: "popup.html" });
-  }
-);
+try {
+  Promise.all([browser.browserAction.getPopup({}), browser.runtime.getPlatformInfo()]).then(
+    ([popup, platformInfo]) => {
+      if (!popup && platformInfo.os != "android")
+        browser.browserAction.setPopup({ popup: "popup.html" });
+    }
+  );
+  
+} catch (e) {
+  
+}
 
 // On Firefox for Android, open the options page directly when the browser
 // action is clicked.

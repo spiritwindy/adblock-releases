@@ -172,10 +172,6 @@ window.addEventListener('unload', () => port.disconnect());
 
 function setSelectedThemeColor() {
   let optionsTheme = 'default_theme';
-  if (BG && BG.getSettings()) {
-    const settings = BG.getSettings();
-    optionsTheme = settings.color_themes.options_page;
-  }
   $('body').attr('id', optionsTheme).data('theme', optionsTheme);
   $('#sidebar-adblock-logo').attr('src', `icons/${optionsTheme}/logo.svg`);
 }
@@ -233,17 +229,17 @@ const addUnSyncErrorClickHandler = function () {
 };
 
 // this function is invoked from the tabs.js module
-const checkForUnSyncError = function () {
-  if (
-    optionalSettings
-    && !optionalSettings.sync_settings
-    && (SyncService.getLastGetStatusCode() === 403
-      || SyncService.getLastPostStatusCode() === 403)
-  ) {
-    showNoLongerSyncError();
-    SyncService.resetAllErrors();
-  }
-};
+// const checkForUnSyncError = function () {
+//   if (
+//     optionalSettings
+//     && !optionalSettings.sync_settings
+//     && (SyncService.getLastGetStatusCode() === 403
+//       || SyncService.getLastPostStatusCode() === 403)
+//   ) {
+//     showNoLongerSyncError();
+//     SyncService.resetAllErrors();
+//   }
+// };
 
 const showSyncMessage = function (msgText, doneIndicator, errorIndicator) {
   if (!msgText) {
@@ -565,10 +561,10 @@ $(() => {
       $('#sidebar-adblock-logo').attr('src', `icons/${currentValue.options_page}/logo.svg`);
     }
   };
-  settingsNotifier.on('settings.changed', onSettingsChanged);
-  window.addEventListener('unload', () => {
-    settingsNotifier.off('settings.changed', onSettingsChanged);
-  });
+  // settingsNotifier.on('settings.changed', onSettingsChanged);
+  // window.addEventListener('unload', () => {
+  //   settingsNotifier.off('settings.changed', onSettingsChanged);
+  // });
 
   setSelectedThemeColor();
   loadOptionalSettings();
