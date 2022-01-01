@@ -2,3 +2,5 @@ www.baidu.com##DIV[class="FYB_RD"]
 www.baidu.com###s-hotsearch-wrapper
 baidu.com###s-hotsearch-wrapper
 baidu.com##.blank-frame
+baidu.com####s_wrap
+www.baidu.com###s_wrap
