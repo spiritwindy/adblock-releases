@@ -6,6 +6,11 @@ baidu.com###s_wrap
 www.baidu.com###s_wrap
 163.com##.post_side_mod
 163.com##.post_recommends
+
+tieba.baidu.com##div[class="ertiao-wrap-defensive"]
+tieba.baidu.com##.tieba-custom-pass-login
+tieba.baidu.com##.topic_list_box
+
 www.zhihu.com##INPUT[id="Popover1-toggle"][class="Input"]
 
 whois.chinaz.com##.ToolsWrapIM
