@@ -4,3 +4,20 @@ baidu.com###s-hotsearch-wrapper
 baidu.com##.blank-frame
 baidu.com###s_wrap
 www.baidu.com###s_wrap
+163.com##.post_side_mod
+163.com##.post_recommends
+www.zhihu.com##INPUT[id="Popover1-toggle"][class="Input"]
+
+whois.chinaz.com##.ToolsWrapIM
+whois.chinaz.com$domain##.wrapperTopBtm
+whois.chinaz.com##DIV[class="ToolsImgWrap clearfix"]
+www.jb51.net##DIV[class="il"]
+*.sohu.com###right-side-bar
+www.sohu.com##DIV[id="right-side-bar"][class="sidebar right"]
+
+||https://tpc.googlesyndication.com/
+||https://googleads.g.doubleclick.net/
+||https://www.google-analytics.com/
+||https://www.googletagmanager.com/
+||https://hm.baidu.com/
+||*clksite.com
