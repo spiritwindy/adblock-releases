@@ -11,6 +11,16 @@ tieba.baidu.com##div[class="ertiao-wrap-defensive"]
 tieba.baidu.com##.tieba-custom-pass-login
 tieba.baidu.com##.topic_list_box
 
+
+sina.com.cn###tab_related
+sina.com.cn###read-comment
+sina.com.cn##.right-side-ad
+sina.com.cn###news-photo
+sina.com.cn###video-miaopai
+sina.com.cn###hot-blog
+sina.com.cn##.new-media-lab
+sina.com.cn##.uni-blk
+
 www.zhihu.com##INPUT[id="Popover1-toggle"][class="Input"]
 
 whois.chinaz.com##.ToolsWrapIM
