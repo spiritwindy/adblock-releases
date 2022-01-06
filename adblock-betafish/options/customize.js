@@ -202,8 +202,6 @@ $(() => {
     } else {
       appendCustomFilter(`${blockDomain}##${blockCss}`);
     }
-
-    $(event.target).closest('.customize-entry-table').find('input[type=\'text\']').val('');
     $(event.target).prop('disabled', true);
   }));
 
