@@ -58,60 +58,7 @@ function displayVersionNumber() {
 }
 
 function displayTranslationCredit() {
-  if (language === 'en' || language.startsWith('en')) {
-    return;
-  }
-  const translators = [];
 
-  $.getJSON(browser.runtime.getURL('translators.json'), (response) => {
-    let matchFound = false;
-    const langSubstring = language.substring(0, 2);
-    let langEnd = '';
-    if (language.length >= 5) {
-      langEnd = language.substring(3, 5).toLowerCase();
-    }
-    for (const id in response) {
-      const idEqualToLang = id === language || id === language.toLowerCase();
-      const idEqualToLangSubstring = id.substring(0, 2) === langSubstring
-        || id.substring(0, 2) === langSubstring.toLowerCase();
-
-      // if matching id hasn't been found and id matches lang
-      if (
-        !matchFound
-        && (idEqualToLang || idEqualToLangSubstring)
-        && (((id.length <= 3) || (id.length >= 5 && langEnd === id.substring(3, 5).toLowerCase())))
-      ) {
-        matchFound = true;
-
-        // Check if this language is professionally translated
-        const professionalLang = response[id].professional;
-        for (const translator in response[id].translators) {
-          // If the language is not professionally translated, or if this translator
-          // is a professional, then add the name to the list of credits
-          if (!professionalLang || response[id].translators[translator].professional) {
-            const name = response[id].translators[translator].credit;
-            translators.push(` ${name}`);
-          }
-        }
-      }
-    }
-
-    const $translatorsCreditBubble = $('.translation_credits');
-    if (translators.length > 0) {
-      const $translatorCreditDiv = $('<div></div>');
-      const $translatorNamesDiv = $('<div></div>');
-
-      $translatorCreditDiv.addClass('speech-bubble-content').text(translate('translator_credit2'));
-      $translatorNamesDiv.addClass('speech-bubble-content').text(translators.toString());
-      $translatorsCreditBubble.empty()
-        .addClass('speech-bubble')
-        .removeClass('do-not-display')
-        .append($translatorCreditDiv)
-        .append($translatorNamesDiv);
-    } else {
-      $translatorsCreditBubble.addClass('do-not-display').empty();
-    }
-  });
 }
 
 function startSubscriptionSelection(title, url) {
@@ -570,7 +517,6 @@ $(() => {
   loadOptionalSettings();
   displayVersionNumber();
   localizePage();
-  displayTranslationCredit();
   shouldShowEmailCTA();
 });
 
