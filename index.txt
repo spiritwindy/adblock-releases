@@ -27,9 +27,7 @@ whois.chinaz.com##.ToolsWrapIM
 whois.chinaz.com##.wrapperTopBtm
 whois.chinaz.com##DIV[class="ToolsImgWrap clearfix"]
 www.jb51.net##DIV[class="il"]
-*.sohu.com###right-side-bar
 www.sohu.com##DIV[id="right-side-bar"][class="sidebar right"]
-
 ||https://tpc.googlesyndication.com/
 ||https://googleads.g.doubleclick.net/
 ||https://www.google-analytics.com/
