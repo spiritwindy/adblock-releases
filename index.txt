@@ -36,3 +36,4 @@ www.sohu.com##DIV[id="right-side-bar"][class="sidebar right"]
 ||https://www.googletagmanager.com/
 ||https://hm.baidu.com/
 ||*clksite.com
+||9fgh98k.com
