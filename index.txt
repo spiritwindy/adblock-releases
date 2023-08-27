@@ -24,7 +24,7 @@ sina.com.cn##.uni-blk
 www.zhihu.com##INPUT[id="Popover1-toggle"][class="Input"]
 
 whois.chinaz.com##.ToolsWrapIM
-whois.chinaz.com$domain##.wrapperTopBtm
+whois.chinaz.com##.wrapperTopBtm
 whois.chinaz.com##DIV[class="ToolsImgWrap clearfix"]
 www.jb51.net##DIV[class="il"]
 *.sohu.com###right-side-bar
