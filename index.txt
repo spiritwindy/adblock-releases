@@ -33,5 +33,5 @@ www.sohu.com##DIV[id="right-side-bar"][class="sidebar right"]
 ||https://www.google-analytics.com/
 ||https://www.googletagmanager.com/
 ||https://hm.baidu.com/
-||9fgh98k.com
-||oiah9r6.xolerkr.cn
+||https://9fgh98k.com
+||https://oiah9r6.xolerkr.cn
